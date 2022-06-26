@@ -1,0 +1,38 @@
+server:
+  port: 8082
+
+#spring:
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/mlb-bestSeller
+#    username: postgres
+#    password: 197197
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#      dialect: org.hibernate.dialect.PostgreSQLDialect
+#      jdbc:
+#        lob.non-contextual-creation: true
+#    properties:
+#      hibernate:
+#        show_sql: true
+
+logging:
+  level:
+    project:
+      user:
+        UserClient: debug
+
+### INTEGRATION ###
+#feign:
+#  client:
+#    config:
+#      default:
+#        connectTimeout: 60000
+#        readTimeout: 60000
+#        loggerLevel: full
+
+bible:
+  api:
+    apiUrl: https://www.abibliadigital.com.br/api
+    secretKey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IldlZCBPY3QgMjcgMjAyMSAxOTo1ODo0NyBHTVQrMDAwMC5sZnBvMjAwNUB5YWhvby5jb20uYnIiLCJpYXQiOjE2MzUzNjQ3Mjd9.ca4ulqkFp3U-g4KRBW2v1wnUjzmPYxay06It2zTZEnc
+
