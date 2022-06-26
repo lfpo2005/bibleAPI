@@ -1,13 +1,11 @@
 package lfcode.api.bible.controlles;
 
-import lfcode.api.bible.model.BibleModel;
 import lfcode.api.bible.bibleclient.VersesClient;
+import lfcode.api.bible.model.BibleModel;
+import lfcode.api.bible.model.Search;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 //@AllArgsConstructor
@@ -25,5 +23,20 @@ public class VersesController {
 										     @PathVariable("number") String number){
 		return ResponseEntity.ok(versesClient.getAllVerses(version, abbrev, chapter, number));
 	}
+
+	@GetMapping( value = "/{version}/{abbrev}", produces = "application/json")
+	public ResponseEntity<BibleModel> findRandom(@PathVariable("version") String version,
+												 @PathVariable("abbrev") String abbrev) {
+
+		return ResponseEntity.ok(versesClient.getRandom(version, abbrev));
+	}
+
+	@PostMapping(produces = "application/json")
+	public ResponseEntity<Search> getSearch(@RequestParam("version") String version,
+											@RequestParam("search") String search) {
+
+		return ResponseEntity.ok(versesClient.getSearch(version, search));
+	}
+
 }
 

@@ -5,8 +5,30 @@ public class Book {
     public Abbrev abbrev;
     public String name;
     public String author;
+
+    public String chapters;
+
+    public String testament;
+
     public String group;
+
     public String version;
+
+    public String getChapters() {
+        return chapters;
+    }
+
+    public void setChapters(String chapters) {
+        this.chapters = chapters;
+    }
+
+    public String getTestament() {
+        return testament;
+    }
+
+    public void setTestament(String testament) {
+        this.testament = testament;
+    }
 
     public Abbrev getAbbrev() {
         return abbrev;
@@ -48,10 +70,12 @@ public class Book {
         this.version = version;
     }
 
-    public Book(Abbrev abbrev, String name, String author, String group, String version) {
+    public Book(Abbrev abbrev, String name, String author, String chapters, String testament, String group, String version) {
         this.abbrev = abbrev;
         this.name = name;
         this.author = author;
+        this.chapters = chapters;
+        this.testament = testament;
         this.group = group;
         this.version = version;
     }

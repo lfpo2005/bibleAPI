@@ -1,18 +1,10 @@
 package lfcode.api.bible.model;
 
-public class BibleModel {
-    public Book book;
+public class BibleModel extends Book {
+
     public String chapter;
     public String number;
     public String text;
-
-    public Book getBook() {
-        return book;
-    }
-
-    public void setBook(Book book) {
-        this.book = book;
-    }
 
     public String getChapter() {
         return chapter;
@@ -38,8 +30,8 @@ public class BibleModel {
         this.text = text;
     }
 
-    public BibleModel(Book book, String chapter, String number, String text) {
-        this.book = book;
+    public BibleModel(Abbrev abbrev, String name, String author, String chapters, String testament, String group, String version, String chapter, String number, String text) {
+        super(abbrev, name, author, chapters, testament, group, version);
         this.chapter = chapter;
         this.number = number;
         this.text = text;
