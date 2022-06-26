@@ -23,13 +23,13 @@ logging:
         UserClient: debug
 
 ### INTEGRATION ###
-#feign:
-#  client:
-#    config:
-#      default:
-#        connectTimeout: 60000
-#        readTimeout: 60000
-#        loggerLevel: full
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 60000
+        readTimeout: 60000
+        loggerLevel: full
 
 bible:
   api:
