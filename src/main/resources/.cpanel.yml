@@ -1,3 +1,4 @@
+---
 deployment:
   tasks:
     - export DEPLOYPATH=/home3/fernand1/fernandooliveira.dev.br/bible
