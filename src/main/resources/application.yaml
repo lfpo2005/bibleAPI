@@ -36,3 +36,6 @@ bible:
     apiUrl: https://www.abibliadigital.com.br/api
     secretKey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IldlZCBPY3QgMjcgMjAyMSAxOTo1ODo0NyBHTVQrMDAwMC5sZnBvMjAwNUB5YWhvby5jb20uYnIiLCJpYXQiOjE2MzUzNjQ3Mjd9.ca4ulqkFp3U-g4KRBW2v1wnUjzmPYxay06It2zTZEnc
 
+server:
+  servlet:
+    contextPath: /bible
