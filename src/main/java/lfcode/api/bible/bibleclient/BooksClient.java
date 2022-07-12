@@ -11,11 +11,11 @@ import java.util.List;
 @FeignClient(name = "books", url = "${bible.api.apiUrl}", configuration = BibleFeinClintConfig.class )
 public interface BooksClient {
 
-	@GetMapping(value = "/books")
+	@GetMapping(value = "/books", produces = "application/json")
 	List<BibleModel> getBooks();
 
 
-	@GetMapping(value = "/books/{abbrev}")
+	@GetMapping(value = "/books/{abbrev}", produces = "application/json")
 	BibleModel getAbbrev(@PathVariable("abbrev") String abbrev);
 
 

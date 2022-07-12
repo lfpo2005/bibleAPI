@@ -16,20 +16,20 @@ server:
 #      hibernate:
 #        show_sql: true
 
-logging:
-  level:
-    project:
-      user:
-        UserClient: debug
-
-### INTEGRATION ###
-feign:
-  client:
-    config:
-      default:
-        connectTimeout: 60000
-        readTimeout: 60000
-        loggerLevel: full
+#logging:
+#  level:
+#    project:
+#      user:
+#        UserClient: debug
+#
+#### INTEGRATION ###
+#feign:
+#  client:
+#    config:
+#      default:
+#        connectTimeout: 60000
+#        readTimeout: 60000
+#        loggerLevel: full
 
 bible:
   api:

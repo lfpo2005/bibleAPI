@@ -2,23 +2,24 @@ package lfcode.api.bible.controlles;
 
 import lfcode.api.bible.bibleclient.VersesClient;
 import lfcode.api.bible.model.BibleModel;
-import lfcode.api.bible.model.Search;
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
-//@AllArgsConstructor
+@Slf4j
+@AllArgsConstructor
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RequestMapping("/verses")
 public class VersesController {
-	
+
 	@Autowired
 	private VersesClient versesClient;
 
-@GetMapping(value = "/{version}/{abbrev}/{chapter}/{number}", produces = "application/json")
+@GetMapping(value = "/{version}/{abbrev}/{chapter}/{number}")
 	public ResponseEntity<BibleModel> getAll(@PathVariable("version") String version,
 										   @PathVariable("abbrev") String abbrev,
 										   @PathVariable("chapter") String chapter,
@@ -27,20 +28,22 @@ public class VersesController {
 		return ResponseEntity.ok(versesClient.getAllVerses(version, abbrev, chapter, number));
 	}
 
-	@GetMapping( value = "/{version}/{abbrev}", produces = "application/json")
+	@GetMapping( value = "/{version}/{abbrev}")
 	public ResponseEntity<BibleModel> findRandom(@PathVariable("version") String version,
 								   @PathVariable("abbrev") String abbrev) {
 
 		return ResponseEntity.ok(versesClient.getRandom(version, abbrev));
+
 	}
 
-	@PostMapping(produces = "application/json")
-	public ResponseEntity<Search> getSearch(@RequestParam("version") String version,
-											@RequestParam("search") String search) {
-		Search searches = versesClient.getSearch(version, search);
+/*
+	@PostMapping
+	public ResponseEntity<Object> registerArticle(@RequestBody Search search) {
+		versesClient.getSearch(search);
 
-		return new ResponseEntity<Search> (searches, HttpStatus.OK);
+		return ResponseEntity.status(HttpStatus.CREATED).body(search);
 	}
+*/
 
 }
 

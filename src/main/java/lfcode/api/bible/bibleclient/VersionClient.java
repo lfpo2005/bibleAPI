@@ -13,7 +13,7 @@ import java.util.List;
 @FeignClient(name = "version", url = "${bible.api.apiUrl}", configuration = BibleFeinClintConfig.class )
 public interface VersionClient {
 
-	@GetMapping(value =  "/Versions/")
+	@GetMapping(value =  "/Versions/", produces = "application/json")
 	List<Version> getAllVersion();
 
 
